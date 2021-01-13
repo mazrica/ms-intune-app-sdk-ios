@@ -12,3 +12,10 @@ Before you install and use Microsoft Intune App SDK for iOS you **must**:
 
 See the [Intune App SDK iOS Developer Guide](https://docs.microsoft.com/en-us/intune/develop/intune-app-sdk-ios) on how to integrate the SDK into your iOS app.
 
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'ms-intune-app-sdk-ios', :git => 'https://github.com/mazrica/ms-intune-app-sdk-ios.git', :branch => '13_stable'
+```
