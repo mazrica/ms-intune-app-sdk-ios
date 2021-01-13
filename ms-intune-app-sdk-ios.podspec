@@ -89,10 +89,11 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  # spec.source_files  = 
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
+  spec.vendored_frameworks = "IntuneMAMSwift.framework", "IntuneMAMSwiftStub.framework"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,7 +107,7 @@ Pod::Spec.new do |spec|
   # spec.resource  = "Microsoft%20License%20Terms%20Intune%20App%20SDK%20for%20iOS.pdf"
   # spec.resources = "Resources/*.png"
 
-  spec.preserve_paths = "IntuneMAMSwift.framework", "IntuneMAMSwiftStub.framework"
+  # spec.preserve_paths = "IntuneMAMSwift.framework", "IntuneMAMSwiftStub.framework"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,5 +133,6 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-
-end
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+end  
